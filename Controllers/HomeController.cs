@@ -11,10 +11,10 @@ namespace PinedaL_API_IA.Controllers
         private readonly ILogger<HomeController> _logger;
         private IChatbotService _chatbotService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IChatbotService chatbotService)
         {
-            _logger = logger;
-            _chatbotService = new GeminiRepository();
+
+            _chatbotService = chatbotService;
         }
 
         public async Task<IActionResult> Index()
